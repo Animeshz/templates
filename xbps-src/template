@@ -1,0 +1,17 @@
+# Template file for 'packagename'
+pkgname=packagename
+version=0.0.1
+revision=1
+#archs="x86_64 aarch64"
+#wrksrc="${pkgname}-master"
+build_style=meson
+hostmakedepends="cargo clang cmake pkg-config"
+makedepends="glib-devel gtk4-devel"
+depends=""
+short_desc=""
+maintainer="Animesh Sahu <animeshsahu19@yahoo.com>"
+license="MIT"
+homepage="https://github.com/Animeshz/packagename"
+distfiles="${homepage}/releases/download/${version}/v${version}.tar.gz"
+checksum=
+
