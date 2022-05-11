@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+require() {
+    command -v "$1" 1>/dev/null || { >&2 echo "Error: $1 is not installed";exit 1; }
+}
+
+require fd
+require enquirer
+
+TEMPLATES_DIR=${BASH_SOURCE%/*}
+
+cd $TEMPLATES_DIR
+template=$(enquirer select -c -m "Choose template you want to use" $(fd -tf --strip-cwd-prefix --min-depth 2) -s 1) || exit $?
+filename=$(enquirer input -m 'The name of the file' -d $(basename $template))
+cd -
+
+cp $TEMPLATES_DIR/$template ./$filename
