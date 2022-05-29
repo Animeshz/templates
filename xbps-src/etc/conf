@@ -1,3 +1,5 @@
 XBPS_ALLOW_RESTRICTED=yes
 XBPS_MAKEJOBS=8
+XBPS_PKG_OPTIONS_intel_media_driver=nonfree  # for enabling hardware video decoding in chromium
+
 # XBPS_PRESERVE_PKGS=yes
