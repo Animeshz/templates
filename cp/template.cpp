@@ -28,6 +28,16 @@ int mod_mul(int a,int b,int m){a=a%m;b=b%m;return(((a*b)%m)+m)%m;}
 int mod_sub(int a,int b,int m){a=a%m;b=b%m;return(((a-b)%m)+m)%m;}
 int mod_div(int a,int b,int m){a=a%m;b=b%m;return(mod_mul(a,mod_inverse(b,m),m)+m)%m;}
 
+string binary(int n) {
+    string s;
+    while (n) {
+        s.push_back(n % 2 + '0');
+        n /= 2;
+    }
+    reverse(s.begin(), s.end());
+    return s;
+}
+
 
 #if !defined(ONLINE_JUDGE) && 1
 #define dbg(x) cerr << #x <<" "; _print(x); cerr << endl;
