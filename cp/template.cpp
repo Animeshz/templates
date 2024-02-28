@@ -16,28 +16,18 @@ using namespace std;
 #define mod       1000000007
 #define mods      998244353
 #define all(x)    (x).begin(), (x).end()
-#define pwp(x,y)  fixed<<setprecision(y)<<x
 #define FIO()     ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0)
 #define repeat    int t;cin>>t;while(t--)
+#define ll        long long
 
 vector<int>sieve(int n){int*arr=new int[n+1];vector<int>vect;for(int i=2;i<=n;i++)if(arr[i]==0){vect.push_back(i);for(int j=2*i;j<=n;j+=i)arr[j]=1;}free(arr);return vect;}
+string binary(int n) {string s;while (n) {s.push_back(n % 2 + '0');n /= 2;}reverse(s.begin(), s.end());return s;}
 int power(int x,unsigned int y,int m){int res=1;x=x%m;if(x==0)return 0;while(y>0){if(y&1)res=(res*x)%m;y=y>>1;x=(x*x)%m;}return res;}
 int mod_inverse(int a,int p){return power(a,p-2,p);}
 int mod_add(int a,int b,int m){a=a%m;b=b%m;return(((a+b)%m)+m)%m;}
 int mod_mul(int a,int b,int m){a=a%m;b=b%m;return(((a*b)%m)+m)%m;}
 int mod_sub(int a,int b,int m){a=a%m;b=b%m;return(((a-b)%m)+m)%m;}
 int mod_div(int a,int b,int m){a=a%m;b=b%m;return(mod_mul(a,mod_inverse(b,m),m)+m)%m;}
-
-string binary(int n) {
-    string s;
-    while (n) {
-        s.push_back(n % 2 + '0');
-        n /= 2;
-    }
-    reverse(s.begin(), s.end());
-    return s;
-}
-
 
 #if !defined(ONLINE_JUDGE) && 1
 #define dbg(x) cerr << #x <<" "; _print(x); cerr << endl;
@@ -55,10 +45,8 @@ template <class T, class V> void _print(map <T, V> v) {cerr << "[ "; for (auto i
 
 
 int main() {
-    FIO();
-    //repeat {}
-    vector<string> v(5, "hi");
-    dbg(v);
+  FIO();
+  repeat {
 
-    return 0;
+  }
 }
