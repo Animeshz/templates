@@ -7,9 +7,9 @@ using namespace std;
 #define clmsb __builtin_clrsb
 #define bitswap __builtin_bswap32
 
-#define clzl __builtin_clzl
-#define ctzl __builtin_ctzl
-#define cnzl __builtin_popcountl
+#define clzl __builtin_clzll
+#define ctzl __builtin_ctzll
+#define cnzl __builtin_popcountll
 #define clmsbl __builtin_clrsb
 #define bitswapl __builtin_bswap64
 
