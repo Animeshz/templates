@@ -20,7 +20,7 @@ using namespace std;
 #define repeat    int t;cin>>t;while(t--)
 #define ll        long long
 
-vector<int>sieve(int n){int*arr=new int[n+1];vector<int>vect;for(int i=2;i<=n;i++)if(arr[i]==0){vect.push_back(i);for(int j=2*i;j<=n;j+=i)arr[j]=1;}free(arr);return vect;}
+vector<int>sieve(int n){int*arr=new int[n+1];vector<int>vect;for(int i=2;i<=n;i++)if(arr[i]==0){vect.push_back(i);for(int j=2*i;j<=n;j+=i)arr[j]=1;}delete[]arr;return vect;}
 string binary(int n) {string s;while (n) {s.push_back(n % 2 + '0');n /= 2;}reverse(s.begin(), s.end());return s;}
 int power(int x,unsigned int y,int m){int res=1;x=x%m;if(x==0)return 0;while(y>0){if(y&1)res=(res*x)%m;y=y>>1;x=(x*x)%m;}return res;}
 int mod_inverse(int a,int p){return power(a,p-2,p);}
@@ -37,10 +37,9 @@ int mod_div(int a,int b,int m){a=a%m;b=b%m;return(mod_mul(a,mod_inverse(b,m),m)+
 
 template <class T> void _print(T t) {cerr << t;}
 void _print(string t) {cerr << '"' << t << '"';}
-template <class T> void _print(vector <T> v) {cerr << "[ "; for (T i : v) {_print(i); cerr << " ";} cerr << "]"<<endl;}
-template <class T> void _print(set <T> v) {cerr << "[ "; for (T i : v) {_print(i); cerr << " ";} cerr << "]";}
-template <class T> void _print(multiset <T> v) {cerr << "[ "; for (T i : v) {_print(i); cerr << " ";} cerr << "]";}
 template <class T, class V> void _print(pair <T, V> p) {cerr << "{"; _print(p.first); cerr << ","; _print(p.second); cerr << "}";}
+template <class T> void _print(vector <T> v) {cerr << "[ "; for (T i : v) {_print(i); cerr << " ";} cerr << "]";}
+template <class T> void _print(set <T> v) {cerr << "[ "; for (T i : v) {_print(i); cerr << " ";} cerr << "]";}
 template <class T, class V> void _print(map <T, V> v) {cerr << "[ "; for (auto i : v) {_print(i); cerr << " ";} cerr << "]";}
 
 
