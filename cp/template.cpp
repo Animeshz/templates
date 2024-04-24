@@ -21,13 +21,13 @@ using namespace std;
 #define ll        long long
 
 vector<int>spf(int n){vector<int>ans(n+1);for(int i=2;i<=n;i++){if(!ans[i]){ans[i]=i;for(int j=i*i;j<=n;j+=i)if(!ans[j])ans[j]=i;}}return ans;}
-string binary(int n){string s;while(n){s.push_back(n%2+'0');n/=2;}reverse(s.begin(),s.end());return s;}
-int power(int x,unsigned int y,int m){int res=1;x=x%m;if(x==0)return 0;while(y>0){if(y&1)res=(res*x)%m;y=y>>1;x=(x*x)%m;}return res;}
-int mod_inverse(int a,int p){return power(a,p-2,p);}
-int mod_add(int a,int b,int m){a=a%m;b=b%m;return(((a+b)%m)+m)%m;}
-int mod_mul(int a,int b,int m){a=a%m;b=b%m;return(((a*b)%m)+m)%m;}
-int mod_sub(int a,int b,int m){a=a%m;b=b%m;return(((a-b)%m)+m)%m;}
-int mod_div(int a,int b,int m){a=a%m;b=b%m;return(mod_mul(a,mod_inverse(b,m),m)+m)%m;}
+string binary(ll n){string s;while(n){s.push_back(n%2+'0');n/=2;}reverse(s.begin(),s.end());return s;}
+ll power(ll x,unsigned ll y,ll m){ll res=1;x=x%m;if(x==0)return 0;while(y>0){if(y&1)res=(res*x)%m;y=y>>1;x=(x*x)%m;}return res;}
+ll mod_inverse(ll a,ll p){return power(a,p-2,p);}
+ll mod_add(ll a,ll b,ll m){a=a%m;b=b%m;return(((a+b)%m)+m)%m;}
+ll mod_mul(ll a,ll b,ll m){a=a%m;b=b%m;return(((a*b)%m)+m)%m;}
+ll mod_sub(ll a,ll b,ll m){a=a%m;b=b%m;return(((a-b)%m)+m)%m;}
+ll mod_div(ll a,ll b,ll m){a=a%m;b=b%m;return(mod_mul(a,mod_inverse(b,m),m)+m)%m;}
 
 #if !defined(ONLINE_JUDGE) && 1
 #define dbg(x) cerr << #x <<" "; _print(x); cerr << endl;
