@@ -46,6 +46,9 @@ template <class T, class V> void _print(map <T, V> v) {cerr << "[ "; for (auto i
 int main() {
   FIO();
   repeat {
+    int n; cin >> n;
 
+    vector<ll> a(n);
+    for (int i = 0; i < n; i++) cin >> a[i];
   }
 }
